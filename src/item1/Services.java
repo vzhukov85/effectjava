@@ -1,8 +1,10 @@
+package item1;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Services {
-    private static final Map<String, Provider> providers = new ConcurrentHashMap<String, Provider>();
+    private static final Map<String, Provider> providers = new ConcurrentHashMap<>();
     public static final String DEFAULT_PROVIDER = "def";
 
     public void registerProvider(Provider provider) {

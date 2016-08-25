@@ -1,3 +1,4 @@
+package item2;
 
 public class NutritionFacts {
     private final int servingSize;
