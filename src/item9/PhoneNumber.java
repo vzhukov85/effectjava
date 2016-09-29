@@ -1,6 +1,6 @@
 package item9;
 
-public final class PhoneNumber {
+public final class PhoneNumber implements Comparable<PhoneNumber> {
     private volatile int hashCodeCash;
 
     private final short areaCode;
@@ -19,6 +19,20 @@ public final class PhoneNumber {
     private static void rangeCheck(int value, int max, String name) {
         if (value < 0 || value > max)
             throw new IllegalArgumentException(name + ": " + value);
+    }
+
+    @Override
+    public int compareTo(PhoneNumber o) {
+        if (areaCode > o.areaCode) return 1;
+        else if (areaCode < o.areaCode) return -1;
+
+        if (prefix > o.prefix) return 1;
+        else if (prefix < o.prefix) return -1;
+
+        if (lineNumber > o.lineNumber) return 1;
+        else if (lineNumber < o.lineNumber) return -1;
+
+        return 0;
     }
 
     @Override
